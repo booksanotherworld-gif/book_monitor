@@ -48,8 +48,9 @@ def init_db():
 def fetch_trending_books():
     """
     Fetch trending books from ISBNdb.
+    Correct endpoint: /books/trending
     """
-    url = "https://api2.isbndb.com/books?q=trending"
+    url = "https://api2.isbndb.com/books/trending"
     resp = requests.get(url, headers=HEADERS, timeout=10)
     resp.raise_for_status()
     data = resp.json()
