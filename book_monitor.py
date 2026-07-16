@@ -3,6 +3,17 @@ import sqlite3
 import requests
 from dotenv import load_dotenv
 from datetime import datetime
+import os
+import requests
+
+# Load ISBNdb API key from GitHub Actions environment
+API_KEY = os.getenv("ISBNDB_API_KEY")
+
+# Debug: confirm the key is being loaded
+print("API KEY LOADED:", API_KEY is not None)
+
+# Prepare headers for ISBNdb requests
+headers = {"X-API-Key": API_KEY}
 
 # ---------------------------------------------------------
 # Load environment variables
